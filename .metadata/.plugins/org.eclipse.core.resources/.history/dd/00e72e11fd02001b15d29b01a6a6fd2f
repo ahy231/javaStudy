@@ -1,0 +1,17 @@
+package com.ahy231;
+
+import java.net.*;
+
+public class TestSocket {
+
+    public static void main(String[] args) throws UnknownHostException {
+    	InetAddress host = InetAddress.getLocalHost();
+    	String ip = host.getHostAddress();
+    	
+    	for (int pieces = 0; pieces <= 255; pieces++) {
+    		ip.replaceAll("\\..*$", "." + pieces);
+    		Runtime.getRuntime().exec("ping " + ip);
+    	}
+    }
+
+}

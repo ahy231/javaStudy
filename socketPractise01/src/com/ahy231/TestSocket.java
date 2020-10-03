@@ -18,8 +18,6 @@ public class TestSocket {
     	String rowIp = ip.replaceAll("\\.[^\\.]{1,3}$", ".");
     	List<String> resultSet = new ArrayList<String>();
     	
-//    	System.out.println(rowIp);
-    	
     	for (int piece = 1; piece < range_max; piece++) {
     		Process p = Runtime.getRuntime().exec("ping " + rowIp + piece);
     		BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -30,16 +28,16 @@ public class TestSocket {
 					sb.append(line);
 				}
 			}
-    		if (sb.toString().matches(".*×Ö½Ú=32.*")) {
+    		if (sb.toString().matches(".*å­—èŠ‚=32.*")) {
     			resultSet.add(String.valueOf(piece));
     		}
-    		System.out.println("ÒÑ¾­Íê³É£º" + piece + "¸öip²âÊÔ");
+    		System.out.println("å·²ç»å®Œæˆï¼š" + piece + "ä¸ªipæµ‹è¯•");
     	}
     	
-    	System.out.println("ÈçÏÂipµØÖ·¿ÉÒÔÁ¬½Ó");
+    	System.out.println("å¦‚ä¸‹ipåœ°å€å¯ä»¥è¿žæŽ¥");
     	for (int round = 0; round < resultSet.size(); round++) {
     		System.out.println(rowIp + resultSet.get(round));
     	}
-    	System.out.println("×Ü¹²ÓÐ£º" + resultSet.size() + "¸öµØÖ·");
+    	System.out.println("æ€»å…±æœ‰ï¼š" + resultSet.size() + "ä¸ªåœ°å€");
     }
 }
