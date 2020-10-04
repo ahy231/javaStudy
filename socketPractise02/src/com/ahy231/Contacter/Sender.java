@@ -19,16 +19,15 @@ public class Sender implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            synchronized (os) {
-                try (Scanner sc = new Scanner(System.in)) {
-                    if (sc.hasNext()) {
-                        os.writeUTF(sc.next());
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+        Scanner sc = new Scanner(System.in);
+        try {
+            while (true) {
+                while (sc.hasNext()) {
+                    os.writeUTF(sc.nextLine());
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

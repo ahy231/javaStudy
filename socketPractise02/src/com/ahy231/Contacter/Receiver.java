@@ -2,6 +2,7 @@ package com.ahy231.Contacter;
 
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.io.StringReader;
 
 /**
  * @author ahy231
@@ -18,14 +19,11 @@ public class Receiver implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            synchronized (is) {
-                try {
-                    System.out.println(is.readUTF());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        try {
+            while (true) {
+                System.out.println(is.readUTF());
             }
+        } catch (IOException e) {
         }
     }
 }
