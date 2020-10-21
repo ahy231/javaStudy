@@ -1,0 +1,30 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-14 14:32:03
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-21 23:01:33
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf8">
+    <script>
+        function verify() {
+            var user = document.getElementsByName("user")[0];
+            var ctxt = document.getElementById("tag");
+            // document.writeln(user.value);
+            if (user.value[0] == 'a') {
+                ctxt.innerHTML = "<span style=\"color:red\">账号已经存在</span>";
+            } else {
+                ctxt.innerHTML = "<span style=\"color:green\">账号可以使用</span>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="user" id="user">
+    <button onclick="verify()">验证</button>
+    <span id="tag"></span>
+</body>
+</html>

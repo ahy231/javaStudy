@@ -1,6 +1,4 @@
 INDEX VERSION 1.131+E:\code\homework\how2j\.metadata\.plugins\org.eclipse.jdt.core
 1840635979.index
 3685307178.index
-1364174295.index
 2196199803.index
-3685698903.index
