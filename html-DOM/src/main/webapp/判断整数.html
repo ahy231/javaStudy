@@ -1,0 +1,32 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-22 19:40:45
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-22 20:51:21
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>判断整数</title>
+</head>
+
+<body>
+    <script>
+        function check() {
+            var number = document.getElementById("number").value;
+            if (!isNaN(number) && number.indexOf(".") == -1 && number !== "") {
+                document.getElementById("context").innerHTML = "是整数";
+            } else {
+                document.getElementById("context").innerHTML = "不知道是不是整数，但你是真的狗";
+            }
+        }
+    </script>
+    <input type="text" name="number" id="number" oninput="check()"></input>
+    <span id="context"></span><br>
+</body>
+
+</html>

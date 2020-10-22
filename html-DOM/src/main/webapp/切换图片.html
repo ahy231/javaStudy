@@ -1,0 +1,34 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-22 18:34:07
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-22 19:39:45
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>切换图片</title>
+</head>
+
+<body>
+    <script>
+        function pic1() {
+            var pic = document.getElementById("pic");
+            pic.src = "../lib/gareen.jpg";
+            document.getElementsByTagName("button")
+        }
+        function pic2() {
+            var pic = document.getElementById("pic");
+            pic.attributes["src"].nodeValue = "../lib/katarina.jpg";
+        }
+    </script>
+    <input type="button" value="通过src属性切换图片1" onclick="pic1()"></input><br>
+    <input type="button" value="通过属性节点切换图片2" onclick="pic2()"></input><br>
+    <img src="../lib/katarina.jpg" alt="卡特琳娜" id="pic">
+</body>
+
+</html>

@@ -3,7 +3,7 @@
  * @Author: ahy231
  * @Date: 2020-10-14 14:32:03
  * @LastEditor: ahy231
- * @LastEditTime: 2020-10-21 23:01:33
+ * @LastEditTime: 2020-10-22 19:15:31
 -->
 <!DOCTYPE html>
 <html>
@@ -15,9 +15,11 @@
             var ctxt = document.getElementById("tag");
             // document.writeln(user.value);
             if (user.value[0] == 'a') {
-                ctxt.innerHTML = "<span style=\"color:red\">账号已经存在</span>";
+                ctxt.innerHTML = "账号已经存在";
+                ctxt.style.color = "red";
             } else {
-                ctxt.innerHTML = "<span style=\"color:green\">账号可以使用</span>";
+                ctxt.innerHTML = "账号可以使用";
+                ctxt.style.color = "green";
             }
         }
     </script>
