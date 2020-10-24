@@ -1,0 +1,70 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-22 21:18:00
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-24 16:14:58
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>斑马表格</title>
+    <style>
+        table {
+            width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        td {
+            width: 225px;
+            height: 40px;
+            text-align: center;
+            border-bottom: 1px solid rgb(211, 211, 211);
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>名称</th>
+            <th>血量</th>
+            <th>伤害</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>gareen</td>
+            <td>340</td>
+            <td>58</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>teemo</td>
+            <td>320</td>
+            <td>76</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>annie</td>
+            <td>380</td>
+            <td>38</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>deadbrother</td>
+            <td>400</td>
+            <td>90</td>
+        </tr>
+    </table>
+    <script>
+        var trs = document.getElementsByTagName("tr");
+        //这里不能用foreach，因为trs是个集合而不是数组。
+        for (i = 0; i < trs.length; i++) {
+            if (i % 2 === 1)
+                trs[i].style.backgroundColor = "rgb(248, 248, 248)";
+        }
+    </script>
+</body>
+</html>

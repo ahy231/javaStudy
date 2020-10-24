@@ -1,0 +1,54 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-24 20:18:25
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-24 21:46:37
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>验证账号升级</title>
+    <script>
+        let ctxt;
+        function myClear() {
+            if (ctxt.style.color !== "black") {
+                ctxt.value = "";
+                ctxt.style.color = "black";
+            }
+        }
+        function init() {
+            if (ctxt.value === "" && ctxt.style.color === "black") {
+                ctxt.value = "请输入账号名";
+                ctxt.style.color = "rgb(120, 120, 120)";
+            }
+        }
+        function verify() {
+            let tip = document.getElementById("verify");
+            if (ctxt.value === "") {
+                tip.innerHTML = "";
+            } else if (ctxt.value[0] === "a") {
+                tip.innerHTML = "账号已经存在";
+                tip.style.color = "red";
+            } else if (ctxt.style.color !== "rgb(120, 120, 120)") {
+                tip.innerHTML = "账号可以使用";
+                tip.style.color = "green";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="account" id="account" onfocus="myClear()" onblur="init()" oninput="verify()">
+    <div id="verify"></div>
+    <script>
+        ctxt = document.getElementById("account");
+        ctxt.value = "请输入账号";
+        ctxt.style.color = "rgb(248, 248, 248)";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <style>
+        .dropdown {
+            width: 15%;
+            display: block;
+        }
+
+        .attributes {
+            display: inline-block;
+        }
+
+        .attributes a {
+            width: 15%;
+        }
+
+        .values div {
+            width: 23%;
+            display: block;
+        }
+
+        .values a {
+            width: 15%;
+            display: none;
+            /* border: 2px solid black; */
+        }
+
+        .values a:hover {
+            background-color: rgb(248, 248, 248);
+        }
+        
+        #weapon {
+            position: absolute;
+            left: 7px;
+        }
+
+        #armor {
+            position: absolute;
+            left: 44px;
+        }
+
+        #hero {
+            position: absolute;
+            left: 81px;
+        }
+    </style>
+    <script>
+        function clear() {
+            var values = document.getElementsByClassName("value");
+            for (i = 0; i < values.length; i++) {
+                values[i].style.display = "none";
+            }
+        }
+        function weapon() {
+            clear();
+            var weapon = document.getElementsByClassName("weapon");
+            for (i = 0; i < weapon.length; i++) {
+                weapon[i].style.display = "block";
+            }
+        }
+        function armor() {
+            clear();
+            var armor = document.getElementsByClassName("armor");
+            for (i = 0; i < armor.length; i++) {
+                armor[i].style.display = "block";
+            }
+        }
+        function hero() {
+            clear();
+            var hero = document.getElementsByClassName("hero");
+            for (i = 0; i < hero.length; i++) {
+                hero[i].style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="dropdown">
+        <div class="attributes">
+            <a href="#nowhere" onmouseover="weapon()">武器</a>
+            <a href="#nowhere" onmouseover="armor()">护甲</a>
+            <a href="#nowhere" onmouseover="hero()">英雄</a>
+        </div>
+        <div class="values">
+            <div id="weapon">
+                <a href="#nowhere" class="value weapon">大剑</a>
+                <a href="#nowhere" class="value weapon">屠龙</a>
+                <a href="#nowhere" class="value weapon">倚天</a>
+                <a href="#nowhere" class="value weapon">七孔砖</a>
+            </div>
+            <div id="armor">
+                <a href="#nowhere" class="value armor">胸甲</a>
+                <a href="#nowhere" class="value armor">护腕</a>
+                <a href="#nowhere" class="value armor">头盔</a>
+                <a href="#nowhere" class="value armor">鞋子</a>
+            </div>
+            <div id="hero">
+                <a href="#nowhere" class="value hero">盖伦</a>
+                <a href="#nowhere" class="value hero">提莫</a>
+                <a href="#nowhere" class="value hero">安妮</a>
+                <a href="#nowhere" class="value hero">死哥</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
