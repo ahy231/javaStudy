@@ -3,7 +3,7 @@
  * @Author: ahy231
  * @Date: 2020-10-24 20:18:25
  * @LastEditor: ahy231
- * @LastEditTime: 2020-10-24 21:46:37
+ * @LastEditTime: 2020-10-25 10:02:56
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
     <title>验证账号升级</title>
     <script>
         let ctxt;
-        function myClear() {
+        /* function myClear() {
             if (ctxt.style.color !== "black") {
                 ctxt.value = "";
                 ctxt.style.color = "black";
@@ -25,7 +25,7 @@
                 ctxt.value = "请输入账号名";
                 ctxt.style.color = "rgb(120, 120, 120)";
             }
-        }
+        } */
         function verify() {
             let tip = document.getElementById("verify");
             if (ctxt.value === "") {
@@ -42,12 +42,12 @@
 </head>
 
 <body>
-    <input type="text" name="account" id="account" onfocus="myClear()" onblur="init()" oninput="verify()">
+    <input type="text" name="account" id="account" oninput="verify()" placeholder="请输入账号名">
     <div id="verify"></div>
     <script>
         ctxt = document.getElementById("account");
-        ctxt.value = "请输入账号";
-        ctxt.style.color = "rgb(248, 248, 248)";
+        // ctxt.value = "请输入账号";
+        // ctxt.style.color = "rgb(248, 248, 248)";
     </script>
 </body>
 

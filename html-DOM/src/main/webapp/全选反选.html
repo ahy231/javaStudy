@@ -1,0 +1,55 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-25 10:04:59
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-25 10:45:40
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>全选反选</title>
+    <style>
+        #checkboxes {
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bold;
+            color:rgb(95, 103, 207);
+        }
+    </style>
+    <script>
+        function reverse() {
+            var bxs = document.getElementsByTagName("input");
+            for (let i = 1; i < bxs.length; i++) {
+                bxs[i].checked = !bxs[i].checked;
+            }
+        }
+        function selectAll() {
+            var bxs = document.getElementsByTagName("input");
+            for (let i = 1; i < bxs.length; i++) {
+                bxs[i].checked = bxs[0].checked;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="checkboxes">
+        <div><input type="checkbox" name="checkbox" id="selectAll" onclick="selectAll()">&nbsp;全选</div>
+        <div><input type="checkbox" name="checkbox" id="tokyoHot">&nbsp;tokyo hot</div>
+        <div><input type="checkbox" name="checkbox" id="dota">&nbsp;dota</div>
+        <div><input type="checkbox" name="checkbox" id="lol">&nbsp;lol</div>
+        <div><input type="checkbox" name="checkbox" id="wow">&nbsp;wow</div>
+        <div><input type="checkbox" name="checkbox" id="warcraft">&nbsp;warcraft</div>
+        <div><input type="checkbox" name="checkbox" id="diablo">&nbsp;diablo</div>
+        <a href="#nowhere" onclick="reverse()">反选</a>
+    </div>
+</body>
+
+</html>

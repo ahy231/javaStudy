@@ -1,0 +1,97 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-26 10:35:13
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-26 11:24:16
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>斑马表格升级</title>
+    <style>
+        table {
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid rgb(200, 200, 200);
+        }
+
+        th {
+            padding: 10px 120px;
+            font-size: large;
+            font-weight: 500;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+            font-size: large;
+            font-weight: 500;
+        }
+    </style>
+    <script>
+        function addTr(id, name, blood, attack) {
+
+            var tr = document.createElement("tr");
+
+            var tdid = document.createElement("td");
+            var tdname = document.createElement("td");
+            var tdblood = document.createElement("td");
+            var tdattack = document.createElement("td");
+
+            var textid = document.createTextNode(id);
+            var textname = document.createTextNode(name);
+            var textblood = document.createTextNode(blood);
+            var textattack = document.createTextNode(attack);
+
+            tdid.appendChild(textid);
+            tdname.appendChild(textname);
+            tdblood.appendChild(textblood);
+            tdattack.appendChild(textattack);
+
+            tr.appendChild(tdid);
+            tr.appendChild(tdname);
+            tr.appendChild(tdblood);
+            tr.appendChild(tdattack);
+
+            var table = document.getElementById("myTable");
+            table.appendChild(tr);
+        }
+        function test() {
+            var a = document.createElement("a");
+            var ctxt = document.createTextNode("test");
+            a.appendChild(ctxt);
+            var newAtt = document.createAttribute("href");
+            newAtt.nodeValue = "https://www.baidu.com";
+            a.setAttributeNode(newAtt);
+            document.getElementById("test").appendChild(a);
+        }
+    </script>
+</head>
+
+<body>
+    <table id="myTable">
+        <tr>
+            <th>id</th>
+            <th>名称</th>
+            <th>血量</th>
+            <th>伤害</th>
+        </tr>
+    </table>
+    <div id="test"></div>
+    <script>
+        addTr("1", "gareen", "340", "58");
+        addTr("2", "teemo", "320", "76");
+        addTr("3", "annie", "380", "38");
+        addTr("4", "deadbrother", "400", "90");
+        test();
+    </script>
+</body>
+
+</html>
