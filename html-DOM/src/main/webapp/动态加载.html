@@ -1,0 +1,25 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-29 14:05:39
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-29 14:10:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>动态加载</title>
+</head>
+
+<body>
+    <script>
+        var tag = document.createElement("script");
+        tag.setAttribute("src", "../js/test.js");
+        document.getElementsByTagName("body")[0].appendChild(tag);
+    </script>
+</body>
+
+</html>
