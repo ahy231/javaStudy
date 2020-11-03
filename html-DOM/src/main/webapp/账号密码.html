@@ -1,0 +1,45 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-30 16:50:09
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-30 17:14:55
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>账号密码</title>
+    <script>
+        function verify() {
+            
+            var account = document.getElementById("userAccount").value;
+            var password = document.getElementById("userPassword").value;
+            
+            if (account.length === 0) {
+                alert("用户名不能为空！");
+                return false;
+            }
+
+            if (password.length === 0) {
+                alert("密码不能为空！");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="">
+        账号：<input type="text" name="account" id="userAccount"><br>
+        密码：<input type="text" name="password" id="userPassword"><br>
+        <button onclick="alert(verify())">登录</button>
+        <!-- 表格中可使用onsubmit()简化操作 -->
+    </form>
+</body>
+
+</html>

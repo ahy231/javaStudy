@@ -1,0 +1,36 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-10-31 15:44:14
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-10-31 15:47:59
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+    <title>不是数字</title>
+    <script>
+        function verify() {
+            var account = document.getElementById("account").value;
+            var age = document.getElementById("age").value;
+            if (account.length < 3) {
+                alert("用户名至少需要3位长度！");
+            } else if (isNaN(age) || age === "") {
+                alert("年龄必须是数字");
+            } else {
+                alert("注册成功！");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    账号：<input type="text" name="account" id="account"><br>
+    年龄：<input type="text" name="age" id="age"><br>
+    <button onclick="verify()">注册</button>
+</body>
+
+</html>
