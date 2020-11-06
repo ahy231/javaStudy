@@ -3,14 +3,44 @@
  * @Author: ahy231
  * @Date: 2020-11-03 23:02:57
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-03 23:06:36
+ * @LastEditTime: 2020-11-04 16:17:04
 -->
 <script src="https://how2j.cn/study/jquery.min.js"></script>
 <script>
     $(function () {
-        document.write($("#d"));
-        document.close();
-    })
+        $("#go").click(function () {
+            $("#block").css("visibility", "visible");
+            setInterval(() => {
+                $("#block div:even").toggleClass("pink");
+            }, 1000);
+            setTimeout(() => {
+                setInterval(() => {
+                    $("#block div:odd").toggleClass("green");
+                }, 1000);
+            }, 500);
+        })
+        var block = document.getElementById("block");
+        var div = document.createElement("div");
+        var sentence = document.createTextNode("生日快乐！！！");
+        div.appendChild(sentence);
+        for (let i = 0; i < 50; i++) {
+            block.appendChild(div.cloneNode(true));
+        }
+    });
 </script>
+<style>
+    .green {
+        background-color: lightgreen;
+    }
 
-<div id="d">Hello JQuery</div>
+    .pink {
+        background-color: pink;
+    }
+
+    #block {
+        visibility:hidden;
+    }
+</style>
+<button id="go">开始了吗？？</button>
+<br><br>
+<div id="block"></div>

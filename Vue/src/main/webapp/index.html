@@ -1,0 +1,22 @@
+<!--
+ * @Copyright: free for non-commercial usage
+ * @Author: ahy231
+ * @Date: 2020-11-04 16:41:48
+ * @LastEditor: ahy231
+ * @LastEditTime: 2020-11-06 17:16:54
+-->
+<script src="https://how2j.cn/study/vue.min.js"></script>
+<div id="div1">
+    <button @click="drawLot">试试手气，看看今天运气怎么样？</button>
+    <div v-if="number<10">？？？</div>
+    <div v-else-if="number<20">下下签</div>
+    <div v-else-if="number<30">下中签</div>
+    <div v-else-if="number<40">下上签</div>
+    <div v-else-if="number<50">中下签</div>
+    <div v-else-if="number<60">中中签</div>
+    <div v-else-if="number<70">中上签</div>
+    <div v-else-if="number<80">上下签</div>
+    <div v-else-if="number<90">上中签</div>
+    <div v-else>上上签</div>
+</div>
+<script src="../js/gareen.js"></script>
