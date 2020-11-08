@@ -3,20 +3,39 @@
  * @Author: ahy231
  * @Date: 2020-11-04 16:41:48
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-06 17:16:54
+ * @LastEditTime: 2020-11-08 09:29:44
 -->
 <script src="https://how2j.cn/study/vue.min.js"></script>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    table * {
+        border: 2px solid black;
+        text-align: center;
+        height: 40px;
+    }
+    th {
+        background-color: grey;
+        width: 20%;
+    }
+    input {
+        height: 30px;
+        text-align: left;
+    }
+</style>
+
 <div id="div1">
-    <button @click="drawLot">试试手气，看看今天运气怎么样？</button>
-    <div v-if="number<10">？？？</div>
-    <div v-else-if="number<20">下下签</div>
-    <div v-else-if="number<30">下中签</div>
-    <div v-else-if="number<40">下上签</div>
-    <div v-else-if="number<50">中下签</div>
-    <div v-else-if="number<60">中中签</div>
-    <div v-else-if="number<70">中上签</div>
-    <div v-else-if="number<80">上下签</div>
-    <div v-else-if="number<90">上中签</div>
-    <div v-else>上上签</div>
+    <table>
+        <tr>
+            <th>输入数据</th>
+            <th>过滤器</th>
+        </tr>
+        <tr>
+            <td><input type="text" v-model="data" placeholder="请输入"></td>
+            <td>{{ data|capitalize|capitalizeLastLetter }}</td>
+        </tr>
+    </table>
 </div>
+
 <script src="../js/gareen.js"></script>
