@@ -3,13 +3,14 @@
  * @Author: ahy231
  * @Date: 2020-11-04 16:41:48
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-08 19:27:47
+ * @LastEditTime: 2020-11-13 23:36:35
 -->
 <script src="https://how2j.cn/study/vue.min.js"></script>
 <style>
     body {
         text-align: center;
     }
+
     .product {
         display: inline-block;
         border: 1px solid black;
@@ -17,13 +18,25 @@
         margin: 20px 20px;
         align-self: auto;
         text-align: left;
+        cursor: pointer;
     }
 </style>
 
+<div id="temp" style="display: none;">
+    <div class="product" @click="increaseSales">
+        <div class="price">
+            {{product.price}}元
+        </div>
+        <div class="productName">
+            {{product.name}}
+        </div>
+        <div class="sale"> 月成交 {{product.sale}} 笔</div>
+        <div class="review"> 评价 {{product.review}} </div>
+    </div>
+</div>
+
 <div id="div1">
-    <product></product>
-    <product></product>
-    <product></product>
+    <product v-for="item in products" v-bind:product="item"></product>
 </div>
 
 <script src="../js/index.js"></script>
