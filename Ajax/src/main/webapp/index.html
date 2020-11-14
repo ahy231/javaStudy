@@ -1,0 +1,42 @@
+<!--
+ * @Author: ahy231
+ * @Date: 2020-11-12 15:59:25
+ * @LastEditors: ahy231
+ * @LastEditTime: 2020-11-14 17:11:30
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1600px, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <span>输入账号 :</span>
+    <input id="name" name="name" onkeyup="check()" type="text">
+    <span id="checkResult"></span>
+
+    <script>
+        var xmlhttp;
+        function check() {
+            var name = document.getElementById("name").value;
+            var url = "http://localhost:8080/Ajax/test.jsp?name=" + name;
+
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = checkResult; //响应函数
+            xmlhttp.open("GET", url, true);   //设置访问的页面
+            xmlhttp.send(null);  //执行访问
+        }
+
+        function checkResult() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                document.getElementById('checkResult').innerHTML = xmlhttp.responseText;
+
+        }
+
+    </script>
+</body>
+
+</html>

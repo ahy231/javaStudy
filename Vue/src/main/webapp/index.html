@@ -3,40 +3,55 @@
  * @Author: ahy231
  * @Date: 2020-11-04 16:41:48
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-13 23:36:35
+ * @LastEditTime: 2020-11-14 09:10:48
 -->
 <script src="https://how2j.cn/study/vue.min.js"></script>
+<script src="http://how2j.cn/study/vue-router.min.js"></script>
+
 <style>
-    body {
-        text-align: center;
+    a {
+        text-decoration: none;
     }
 
-    .product {
-        display: inline-block;
-        border: 1px solid black;
-        width: 200px;
-        margin: 20px 20px;
-        align-self: auto;
-        text-align: left;
-        cursor: pointer;
+    a.router-link-active {
+        /*   color:blue; */
+        background-color: lightGray;
+    }
+
+    div.menu {
+        border: 1px solid gray;
+        float: left;
+    }
+
+    div.menu a {
+        display: block;
+    }
+
+    div.workingRoom {
+        margin-left: 100px;
+    }
+
+    div#app {
+        width: 500px;
+        padding: 10px;
+        margin: 10px auto;
     }
 </style>
 
-<div id="temp" style="display: none;">
-    <div class="product" @click="increaseSales">
-        <div class="price">
-            {{product.price}}元
-        </div>
-        <div class="productName">
-            {{product.name}}
-        </div>
-        <div class="sale"> 月成交 {{product.sale}} 笔</div>
-        <div class="review"> 评价 {{product.review}} </div>
+<div id="app">
+    <div class="menu">
+        <!-- 
+            router-link 相当于就是超链
+            to 相当于就是 href
+         -->
+         <router-link to="/user">用户管理</router-link>
+         <router-link to="/product">产品管理</router-link>
+         <router-link to="/order">订单管理</router-link>
     </div>
-</div>
 
-<div id="div1">
-    <product v-for="item in products" v-bind:product="item"></product>
+    <div class="workingRoom">
+        <router-view></router-view>
+    </div>
 </div>
 
 <script src="../js/index.js"></script>

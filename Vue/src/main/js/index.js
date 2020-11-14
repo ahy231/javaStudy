@@ -3,30 +3,33 @@
  * @Author: ahy231
  * @Date: 2020-11-04 16:43:28
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-13 23:38:12
+ * @LastEditTime: 2020-11-14 09:20:17
  */
-
-var temp = document.getElementById("temp");
-
-Vue.component('product', {
-    props: ['product'],
-    template: temp,
-    methods: {
-        increaseSales: function () {
-            this.product.sale = parseInt(this.product.sale);
-            this.product.sale += 1;
-            this.$emit('increment');
-        }
-    }
-})
-
+/*
+* 申明三个模板(html片段)
+*/
+var user = { template: '<p>用户管理页面的内容</p>' };
+var second = { template: '<p>产品管理页面的内容</p>' };
+var order = { template: '<p>订单管理页面的内容</p>' };
+/*
+* 定义路由
+*/
+var routes = [
+    { path: '/', redirect: '/user'}, // 这个表示会默认渲染 /user，没有这个就是空白
+    { path: '/user', component: user},
+    { path: '/product', component: second},
+    { path: '/order', component: order}
+];
+/*
+* 创建VueRouter实例
+*/
+var router = new VueRouter({
+    routes:routes
+});
+/*
+* 给vue对象绑定路由
+*/
 new Vue({
-    el: '#div1',
-    data: {
-        products: [
-            { "name": "MAXFEEL休闲男士手包真皮手拿包大容量信封包手抓包夹包软韩版潮", "price": "889", "sale": "18", "review": "5" },
-            { "name": "宾度 男士手包真皮大容量手拿包牛皮个性潮男包手抓包软皮信封包", "price": "322", "sale": "35", "review": "12" },
-            { "name": "唯美诺新款男士手包男包真皮大容量小羊皮手拿包信封包软皮夹包潮", "price": "523", "sale": "29", "review": "3" }
-        ]
-    }
+    el:"#app",
+    router
 })
