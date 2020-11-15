@@ -2,7 +2,7 @@
  * @Author: ahy231
  * @Date: 2020-11-12 15:59:25
  * @LastEditors: ahy231
- * @LastEditTime: 2020-11-14 17:11:30
+ * @LastEditTime: 2020-11-15 10:26:24
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,8 @@
         var xmlhttp;
         function check() {
             var name = document.getElementById("name").value;
-            var url = "http://localhost:8080/Ajax/test.jsp?name=" + name;
+            var url = "http://localhost:8080/Ajax/Test?name=" + name;
+            // var url = "http://localhost:8080/Ajax/test.jsp?name=" + name;
 
             xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = checkResult; //响应函数

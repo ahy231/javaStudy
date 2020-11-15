@@ -18,9 +18,9 @@ public class Test extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html; charset=\"gb2312\"");
-		String str = (String) req.getAttribute("name");
+		String str = (String) req.getParameter("name");
 		PrintWriter out = resp.getWriter();
-		out.println(str);
+		out.println("这个名字： " + str + " 真帅！");
 	}
 	
 	@Override
