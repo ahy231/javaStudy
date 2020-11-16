@@ -3,7 +3,7 @@
  * @Author: ahy231
  * @Date: 2020-11-04 16:43:28
  * @LastEditor: ahy231
- * @LastEditTime: 2020-11-14 09:20:17
+ * @LastEditTime: 2020-11-15 18:54:38
  */
 /*
 * 申明三个模板(html片段)
@@ -32,4 +32,13 @@ var router = new VueRouter({
 new Vue({
     el:"#app",
     router
+})
+
+Vue.directive('xart', function (el) {
+    el.innerHTML = el.innerHTML + '(x-art)';
+    el.style.color = 'pink';
+})
+
+new Vue({
+    el:"#div1"
 })

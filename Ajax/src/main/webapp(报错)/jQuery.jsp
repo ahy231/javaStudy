@@ -2,7 +2,7 @@
  * @Author: ahy231
  * @Date: 2020-11-15 08:59:51
  * @LastEditors: ahy231
- * @LastEditTime: 2020-11-15 12:25:09
+ * @LastEditTime: 2020-11-15 15:11:34
 -->
 <%@ page language="java" contentType="text/html; charset=gb2312"
     pageEncoding="gb2312"%>
@@ -25,15 +25,15 @@
 <script>
     $(function () {
         $("#input").keyup(
-            function () {
+            // function () {
                 $.ajax({
-                    url: '${pageContext.request.contextPath}/Test',
+                    url: '${pageContext.request.contextPath}/test.jsp',
                     data: { 'name': $("#input").val() },
                     success: function (result) {
-                        $("#result").html(result)
+                        $("#result").html(result);
                     }
                 })
-            }
+            // }
             // 如果直接将$.ajax()传入，会发生错误如下
             // ((x.event.special[o.origType] || {}).handle || o.handler).apply is not a function
         )
