@@ -2064,3 +2064,241 @@ java.io.FileNotFoundException: no segments* file found in org.apache.lucene.stor
 	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.lambda$0(NexusIndexManager.java:656) ~[na:na]
 	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:74) ~[na:na]
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.800.v20200421-0950.jar:na]
+2020-11-26 14:08:12,197 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-26 14:08:20,320 [Worker-0: Updating indexes] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|https://repo.maven.apache.org/maven2
+2020-11-26 14:08:23,949 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2020-11-26 14:08:42,099 [Worker-0: Updating indexes] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|https://repo.maven.apache.org/maven2
+java.net.ConnectException: Failed to connect to repo.maven.apache.org/151.101.40.215:443
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:265) ~[na:na]
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:183) ~[na:na]
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.java:224) ~[na:na]
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.java:107) ~[na:na]
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.java:87) ~[na:na]
+	at okhttp3.internal.connection.Transmitter.newExchange(Transmitter.java:169) ~[na:na]
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:41) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[na:na]
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[na:na]
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[na:na]
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142) ~[na:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117) ~[na:na]
+	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:221) ~[na:na]
+	at okhttp3.RealCall.execute(RealCall.java:81) ~[na:na]
+	at io.takari.aether.okhttp.OkHttpAetherClient.execute(OkHttpAetherClient.java:215) ~[na:na]
+	at io.takari.aether.okhttp.OkHttpAetherClient.get(OkHttpAetherClient.java:161) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AetherClientResourceFetcher.retrieve(AetherClientResourceFetcher.java:90) ~[na:na]
+	at org.apache.maven.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:35) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:452) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1125) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1082) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.lambda$0(NexusIndexManager.java:656) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:74) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.800.v20200421-0950.jar:na]
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:503) ~[na:na]
+	at java.base/sun.nio.ch.Net.connect(Net.java:492) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:648) ~[na:na]
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:130) ~[na:na]
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:263) ~[na:na]
+	... 32 common frames omitted
+2020-11-26 14:08:44,536 [Worker-8: reload maven project] ERROR o.e.m2e.editor.pom.MavenPomEditor - failed to load maven project for org.eclipse.ui.part.FileEditorInput(/springboot/pom.xml)
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:847) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.lambda$22(ProjectRegistryManager.java:1064) ~[na:na]
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4878) ~[na:na]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529) ~[na:na]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278) ~[na:na]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155) ~[na:na]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045) ~[na:na]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3953) ~[na:na]
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4873) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:1063) ~[na:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:244) ~[na:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261) ~[org.eclipse.m2e.core.ui_1.16.0.20200514-1409.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:634) ~[na:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$3.run(MavenPomEditor.java:938) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.800.v20200421-0950.jar:na]
+2020-11-26 14:11:26,289 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:26,289 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\main\resources
+2020-11-26 14:11:26,292 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:26,292 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\test\resources
+2020-11-26 14:11:28,999 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:28,999 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\main\resources
+2020-11-26 14:11:29,001 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:29,002 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\test\resources
+2020-11-26 14:11:29,084 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:29,085 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\main\resources
+2020-11-26 14:11:29,086 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 14:11:29,087 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\test\resources
+2020-11-26 14:16:39,612 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/1.5.9.RELEASE/spring-boot-starter-parent-1.5.9.RELEASE.pom
+2020-11-26 14:16:42,696 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/1.5.9.RELEASE/spring-boot-starter-parent-1.5.9.RELEASE.pom
+2020-11-26 14:16:44,213 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/1.5.9.RELEASE/spring-boot-starter-test-1.5.9.RELEASE.pom
+2020-11-26 14:16:47,832 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/1.5.9.RELEASE/spring-boot-starter-test-1.5.9.RELEASE.pom
+2020-11-26 14:16:50,250 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/1.5.9.RELEASE/spring-boot-test-1.5.9.RELEASE.pom
+2020-11-26 14:16:51,952 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/1.5.9.RELEASE/spring-boot-test-1.5.9.RELEASE.pom
+2020-11-26 14:16:53,416 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/1.5.9.RELEASE/spring-boot-test-autoconfigure-1.5.9.RELEASE.pom
+2020-11-26 14:16:59,502 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/1.5.9.RELEASE/spring-boot-test-autoconfigure-1.5.9.RELEASE.pom
+2020-11-26 14:16:59,870 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.pom
+2020-11-26 14:17:02,915 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.pom
+2020-11-26 14:17:03,256 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.2.1/json-smart-2.2.1.pom
+2020-11-26 14:17:06,465 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.2.1/json-smart-2.2.1.pom
+2020-11-26 14:17:06,891 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/1.1/accessors-smart-1.1.pom
+2020-11-26 14:17:11,181 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/1.1/accessors-smart-1.1.pom
+2020-11-26 14:17:11,586 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/minidev/minidev-parent/2.2/minidev-parent-2.2.pom
+2020-11-26 14:17:15,495 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/minidev/minidev-parent/2.2/minidev-parent-2.2.pom
+2020-11-26 14:17:17,603 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+2020-11-26 14:17:19,083 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.pom
+2020-11-26 14:17:19,557 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+2020-11-26 14:17:24,101 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm-parent/5.0.3/asm-parent-5.0.3.pom
+2020-11-26 14:17:24,488 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom
+2020-11-26 14:17:30,786 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/ow2/1.3/ow2-1.3.pom
+2020-11-26 14:17:32,655 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.pom
+2020-11-26 14:17:38,744 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.pom
+2020-11-26 14:17:39,204 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.pom
+2020-11-26 14:17:44,786 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.pom
+2020-11-26 14:17:45,686 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/1.5.9.RELEASE/spring-boot-starter-web-1.5.9.RELEASE.jar
+2020-11-26 14:17:46,094 [AetherRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar
+2020-11-26 14:17:47,105 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/1.5.9.RELEASE/spring-boot-starter-test-1.5.9.RELEASE.jar
+2020-11-26 14:17:47,105 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/1.5.9.RELEASE/spring-boot-test-1.5.9.RELEASE.jar
+2020-11-26 14:17:47,105 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/1.5.9.RELEASE/spring-boot-test-autoconfigure-1.5.9.RELEASE.jar
+2020-11-26 14:17:49,281 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-test/1.5.9.RELEASE/spring-boot-starter-test-1.5.9.RELEASE.jar
+2020-11-26 14:17:49,282 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/1.5.9.RELEASE/spring-boot-starter-web-1.5.9.RELEASE.jar
+2020-11-26 14:17:50,485 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar
+2020-11-26 14:17:50,485 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar
+2020-11-26 14:19:40,207 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar
+2020-11-26 14:19:40,837 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+2020-11-26 14:20:19,586 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test-autoconfigure/1.5.9.RELEASE/spring-boot-test-autoconfigure-1.5.9.RELEASE.jar
+2020-11-26 14:20:20,599 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.jar
+2020-11-26 14:20:27,697 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar
+2020-11-26 14:20:28,884 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+2020-11-26 14:20:29,626 [AetherRepositoryConnector-repo.maven.apache.org-0-0] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/ow2/asm/asm/5.0.3/asm-5.0.3.jar
+2020-11-26 14:20:31,394 [AetherRepositoryConnector-repo.maven.apache.org-0-2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-test/1.5.9.RELEASE/spring-boot-test-1.5.9.RELEASE.jar
+2020-11-26 14:20:37,329 [AetherRepositoryConnector-repo.maven.apache.org-0-3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.jar
+2020-11-26 14:20:38,544 [AetherRepositoryConnector-repo.maven.apache.org-0-1] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+2020-11-26 14:20:42,055 [AetherRepositoryConnector-repo.maven.apache.org-0-4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar
+2020-11-26 14:20:47,612 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/1.5.9.RELEASE/spring-boot-maven-plugin-1.5.9.RELEASE.pom
+2020-11-26 14:20:49,258 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/1.5.9.RELEASE/spring-boot-maven-plugin-1.5.9.RELEASE.pom
+2020-11-26 14:20:49,524 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tools/1.5.9.RELEASE/spring-boot-tools-1.5.9.RELEASE.pom
+2020-11-26 14:20:49,798 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tools/1.5.9.RELEASE/spring-boot-tools-1.5.9.RELEASE.pom
+2020-11-26 14:20:52,810 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/1.5.9.RELEASE/spring-boot-maven-plugin-1.5.9.RELEASE.jar
+2020-11-26 14:22:09,311 [Worker-20: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/1.5.9.RELEASE/spring-boot-maven-plugin-1.5.9.RELEASE.jar
+2020-11-26 14:22:25,175 [Worker-21: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
+2020-11-26 16:21:25,995 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-26 16:21:31,635 [Worker-7: Updating indexes] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|https://repo.maven.apache.org/maven2
+2020-11-26 16:21:37,822 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2020-11-26 16:21:41,913 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:41,914 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\main\resources
+2020-11-26 16:21:41,919 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:41,919 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\test\resources
+2020-11-26 16:21:45,323 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:45,323 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\main\resources
+2020-11-26 16:21:45,325 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:45,325 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\test\resources
+2020-11-26 16:21:45,592 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:45,593 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\main\resources
+2020-11-26 16:21:45,594 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:21:45,594 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\test\resources
+2020-11-26 16:21:51,005 [Worker-11: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
+2020-11-26 16:21:56,816 [Worker-11: Building] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
+2020-11-26 16:21:59,665 [Worker-11: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.how2java:springboot:0.0.1-SNAPSHOT @ E:\code\homework\how2j\springboot\pom.xml.
+2020-11-26 16:22:06,362 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:22:06,372 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-11-26 16:22:06,384 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:22:06,386 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:22:06,387 [Worker-11: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\springboot\src\test\resources
+2020-11-26 16:22:08,769 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/1.5.9.RELEASE/spring-boot-starter-web-1.5.9.RELEASE-sources.jar
+2020-11-26 16:22:08,979 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/1.5.9.RELEASE/spring-boot-starter-web-1.5.9.RELEASE-sources.jar
+2020-11-26 16:22:09,172 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-web:1.5.9.RELEASE
+2020-11-26 16:22:09,303 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:22:09,305 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:22:09,305 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:22:09,307 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:22:09,307 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\springboot\src\test\resources
+2020-11-26 16:22:11,105 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/1.5.9.RELEASE/spring-boot-starter-1.5.9.RELEASE-sources.jar
+2020-11-26 16:22:12,247 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/1.5.9.RELEASE/spring-boot-starter-1.5.9.RELEASE-sources.jar
+2020-11-26 16:22:12,355 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter:1.5.9.RELEASE
+2020-11-26 16:22:13,508 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar
+2020-11-26 16:23:09,909 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/1.5.9.RELEASE/spring-boot-1.5.9.RELEASE-sources.jar
+2020-11-26 16:23:10,120 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot:1.5.9.RELEASE
+2020-11-26 16:23:12,290 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar
+2020-11-26 16:23:56,739 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:23:56,740 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:23:56,741 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:23:56,743 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:23:56,743 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\springboot\src\test\resources
+2020-11-26 16:24:04,040 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:24:04,042 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:24:04,044 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-11-26 16:24:04,048 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 16:24:04,049 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\springboot\src\test\resources
+2020-11-26 16:24:34,299 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE-sources.jar
+2020-11-26 16:24:34,405 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-autoconfigure:1.5.9.RELEASE
+2020-11-26 16:24:35,332 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-logging/1.5.9.RELEASE/spring-boot-starter-logging-1.5.9.RELEASE-sources.jar
+2020-11-26 16:24:35,978 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-logging/1.5.9.RELEASE/spring-boot-starter-logging-1.5.9.RELEASE-sources.jar
+2020-11-26 16:24:36,161 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework.boot:spring-boot-starter-logging:1.5.9.RELEASE
+2020-11-26 16:24:37,478 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11-sources.jar
+2020-11-26 16:24:44,128 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11-sources.jar
+2020-11-26 16:24:44,657 [Worker-12: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for ch.qos.logback:logback-classic:1.1.11
+2020-11-26 16:24:45,522 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11-sources.jar
+2020-11-26 16:25:00,793 [Worker-7: Updating indexes] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|https://repo.maven.apache.org/maven2
+org.eclipse.core.runtime.OperationCanceledException: null
+	at org.eclipse.m2e.core.internal.index.nexus.AetherClientResourceFetcher.retrieve(AetherClientResourceFetcher.java:98) ~[na:na]
+	at org.apache.maven.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:35) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$LocalCacheIndexAdaptor.addIndexChunk(DefaultIndexUpdater.java:688) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:803) ~[na:na]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1125) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1082) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.lambda$0(NexusIndexManager.java:656) ~[na:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:74) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.800.v20200421-0950.jar:na]
+2020-11-26 16:25:00,982 [Worker-12: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11-sources.jar
+2020-11-26 16:25:00,989 [Worker-12: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for ch.qos.logback:logback-core:1.1.11
+org.eclipse.core.runtime.CoreException: Could not resolve artifact ch.qos.logback:logback-core:jar:sources:1.1.11
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$4(MavenImpl.java:803) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:114) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:771) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:748) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:330) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:304) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:269) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:233) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:161) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101) ~[na:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1373) ~[na:na]
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:161) ~[na:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) ~[org.eclipse.core.jobs_3.10.800.v20200421-0950.jar:na]
+2020-11-26 19:18:01,171 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-26 19:18:05,603 [Worker-4: Updating indexes] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|https://repo.maven.apache.org/maven2
+2020-11-26 19:18:11,686 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.
+2020-11-26 19:20:11,188 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:11,188 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\main\resources
+2020-11-26 19:20:11,191 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:11,191 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Ajax\src\test\resources
+2020-11-26 19:20:12,514 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:12,515 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\main\resources
+2020-11-26 19:20:12,516 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:12,517 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\Bootstrap\src\test\resources
+2020-11-26 19:20:12,599 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:12,599 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\main\resources
+2020-11-26 19:20:12,601 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:12,601 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\test\resources
+2020-11-26 19:20:51,707 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:51,707 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\main\resources
+2020-11-26 19:20:51,709 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-11-26 19:20:51,709 [Worker-15: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\code\homework\how2j\html-DOM\src\test\resources
