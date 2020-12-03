@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloController {
     @RequestMapping("/hello")
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        ModelAndView mav = new ModelAndView("hello.jsp");
+        ModelAndView mav = new ModelAndView("hello");
         mav.addObject("greet", "Hello world!");
         return mav;
     }

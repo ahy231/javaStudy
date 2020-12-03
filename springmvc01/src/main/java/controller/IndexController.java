@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class IndexController {
     @RequestMapping("/index")
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        ModelAndView mav = new ModelAndView("index.jsp");
+        ModelAndView mav = new ModelAndView("index");
         mav.addObject("message", "hello Spring MVC");
         return mav;
     }
