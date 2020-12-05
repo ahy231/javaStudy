@@ -69,13 +69,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.ahy231.html_DOM"/>
 		</list>
 		<list key="groupId">
-			<item value="com.ahy231"/>
 		</list>
 		<list key="artifactId">
-			<item value="html-DOM"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
