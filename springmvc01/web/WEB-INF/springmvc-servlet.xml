@@ -4,9 +4,9 @@
     <bean id="simpleUrlHandlerMapping"
           class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
-            <props>
-                <prop key="/index">indexController</prop>
-            </props>
+        <props>
+            <prop key="/index">indexController</prop>
+        </props>
         </property>
     </bean>
     <bean id="indexController" class="controller.IndexController"></bean>
