@@ -8,14 +8,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import pojo.Product;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 @Controller
 public class IndexController {
-    @RequestMapping("/index")
+    @RequestMapping("/index/indexController")
     public ModelAndView show() throws IOException {
         ModelAndView mav = new ModelAndView("showProduct");
         String resource = "mybatis-config.xml";
