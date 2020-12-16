@@ -11,6 +11,7 @@
     <title>session check</title>
   </head>
   <body>
+    <h1>统计session个数</h1>
     <h1>COUNT: ${count}</h1>
   </body>
 </html>
